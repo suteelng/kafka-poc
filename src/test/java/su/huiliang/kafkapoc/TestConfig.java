@@ -1,14 +1,15 @@
 package su.huiliang.kafkapoc;
 
-import org.apache.kafka.clients.consumer.Consumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.kafka.core.*;
+import org.springframework.kafka.core.DefaultKafkaProducerFactory;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.utils.KafkaTestUtils;
 
-import java.util.Map;
+// https://www.logicbig.com/tutorials/spring-framework/spring-boot/test-configuration.html
 
 @TestConfiguration
 public class TestConfig {
