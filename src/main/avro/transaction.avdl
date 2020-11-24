@@ -1,0 +1,13 @@
+@namespace("su.huiliang.kafkapoc")
+protocal Simple {
+  enum Source {
+   SWISH,
+   CREDIT_CARD
+  }
+
+  record Transaction {
+    string account;
+    double amount;
+    Source source;
+  }
+ }
