@@ -1,8 +1,8 @@
 @namespace("su.huiliang.kafkapoc")
-protocal Simple {
+protocol Simple {
   enum Source {
-   SWISH,
-   CREDIT_CARD
+    SWISH,
+    CREDIT_CARD
   }
 
   record Transaction {
@@ -10,4 +10,4 @@ protocal Simple {
     double amount;
     Source source;
   }
- }
+}
