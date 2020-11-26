@@ -1,5 +1,6 @@
 package su.huiliang.kafkapoc;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -16,6 +18,8 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @SpringBootApplication
+@EnableKafka
+@RequiredArgsConstructor
 public class KafkaProducer {
 
     public static final String TOPIC_SWISH = "transaction-swish";
@@ -25,7 +29,6 @@ public class KafkaProducer {
         SpringApplication.run(KafkaProducer.class, args);
     }
 
-    @Autowired
     private KafkaTemplate<String, Transaction> template;
 
     private final CountDownLatch latch = new CountDownLatch(3);
